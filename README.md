@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Quote Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An React application to Generate Quotes using react-hooks and Bootstrap
 
 ## Available Scripts
 
