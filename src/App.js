@@ -31,21 +31,22 @@ function App() {
       <h1>Quote Generator!</h1>
       {/* SETUP UX ELEMENTS */}
       <section className='FlexContainer'>
-        <div className="dropdown" >
-          <button className='btn btn-sm' onClick={() => getMoreQuotes()} style={{ marginRight: '10px' }}><strong>Generate More</strong></button>
-          <button className="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <section className='border-solid hover:border-dotted'>
+          <button className='bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'
+            onClick={() => getMoreQuotes()} style={{ marginRight: '10px' }}>Generate More</button>
+          <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Amount : {results}
           </button>
           {/* SELECT AMOUNT OF QUOTES FROM DROPDOWN */}
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" >
             {amount.map((num, idx) => <button key={idx} className='btn btn-small btn-margin' onClick={() => setAmount(num)}>{num}</button>)}
           </div>
-        </div>
+        </section>
         {/* DISPLAY QUOTES USING SLICE AND MAP FUNCS */}
       </section>
       <section className='FlexContainer'>
         {quotes.slice(start, end).map((item, idx) =>
-          <div key={idx}>
+          <div key={idx} className=' bg-white shadow-md hover:shadow-lg rounded px-15 pt-6 pb-8 mb-4 shadow-md'>
             <p>"{item.text ? item.text : "Hold up this quote is missing??"}"</p>
             <p><strong>{item.author ? item.author : "Anonymous"}</strong></p></div>)}
       </section>
